@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MY CREATIVE SPACE | 個人設計履歷</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Arial", "Microsoft JhengHei", sans-serif;
+    background: #f5f1e8;
+    color: #252820;
+}
+.aa{
+    width: 530px;
+    height: 500px;
+    
+}
+
+/* 導覽列 */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(245,241,232,0.95);
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid #d8d2c4;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #252820;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #8b9c52;
+}
+
+/* 共用區域 */
+section {
+    padding: 110px 10%;
+    scroll-margin-top: 65px;
+}
+
+.section-title {
+    font-size: 38px;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    color: #888;
+    margin-bottom: 45px;
+    font-size: 14px;
+}
+
+/* 首頁 */
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #e5e2d5;
+    position: relative;
+    overflow: hidden;
+}
+
+.home-tag {
+    color: #77874c;
+    letter-spacing: 4px;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+#home h1 {
+    font-size: clamp(48px, 9vw, 110px);
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+#home h1 span {
+    color: #89995a;
+}
+
+.home-description {
+    margin-top: 30px;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.home-button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 30px;
+    background: #89995a;
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+    transition: 0.3s;
+}
+
+.home-button:hover {
+    background: #59653a;
+    transform: translateY(-3px);
+}
+
+.home-number {
+    position: absolute;
+    right: 10%;
+    bottom: 12%;
+    font-size: 150px;
+    font-weight: bold;
+    color: rgba(137,153,90,0.15);
+}
+
+/* 關於我 */
+#about {
+    background: #f5f1e8;
+}
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+
+.profile-box img{
+    width:500px;
+    height:500px;
+}
+.about-text h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #666;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+.info {
+    margin-top: 25px;
+    line-height: 2.3;
+    font-size: 14px;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-list span {
+    background: #e5e2d5;
+    padding: 9px 16px;
+    font-size: 13px;
+}
+
+/* 作品集 */
+#portfolio {
+    background: #e5e2d5;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.work-card {
+    background: #f5f1e8;
+    transition: 0.3s;
+}
+
+.work-card:hover {
+    transform: translateY(-8px);
+}
+
+.work-image {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    background: #c5c8b2;
+    
+}
+
+.work-card:nth-child(2) .work-image {
+    background: #d8c5b2;
+}
+
+.work-card:nth-child(3) .work-image {
+    background: #b9c6c1;
+}
+
+.work-info {
+    padding: 22px;
+}
+
+.work-info h3 {
+    margin-bottom: 10px;
+}
+
+.work-info p {
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* 興趣 */
+#interests {
+    background: #f5f1e8;
+}
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.interest-card {
+    padding: 30px 25px;
+    border: 1px solid #d8d2c4;
+    transition: 0.3s;
+}
+
+.interest-card:hover {
+    background: #e5e2d5;
+}
+
+.interest-icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.interest-card h3 {
+    margin-bottom: 15px;
+}
+
+.interest-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* YouTube影片 */
+.video-area {
+    margin-top: 65px;
+}
+
+.video-area h3 {
+    margin-bottom: 20px;
+}
+
+.video-container {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* 聯絡我 */
+#contact {
+    background: #89995a;
+    color: white;
+    text-align: center;
+}
+
+#contact .subtitle {
+    color: #e5e8d8;
+}
+
+.contact-text {
+    font-size: 18px;
+    line-height: 2.5;
+}
+
+.contact-text a {
+    color: white;
+}
+
+footer {
+    background: #252820;
+    color: #aaa;
+    text-align: center;
+    padding: 25px;
+    font-size: 12px;
+}
+
+/* 手機版 */
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav ul {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    section {
+        padding: 100px 7%;
+    }
+
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .work-grid,
+    .interest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-number {
+        font-size: 80px;
+    }
+
+    #home h1 {
+        letter-spacing: -2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 導覽列 -->
+<nav>
+    <div class="logo">MY SPACE.</div>
+    <ul>
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#portfolio">WORKS</a></li>
+        <li><a href="#interests">INTERESTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+    </ul>
+</nav>
+
+<!-- 01 首頁 -->
+<section id="home">
+    <div class="home-tag">WELCOME TO MY WORLD</div>
+
+    <h1>
+        DESIGN<br>
+        <span>MY LIFE.</span>
+    </h1>
+
+    <p class="home-description">
+        Hello! Welcome to my creative space.<br>
+        這裡記錄著我的設計作品、生活靈感與喜愛的事物。<br>
+        用自己的方式，探索更多可能性。
+    </p>
+
+    <a href="#about" class="home-button">EXPLORE MORE →</a>
+
+    <div class="home-number">01</div>
+</section>
+
+<!-- 02 個人介紹 -->
+<section id="about">
+    <h2 class="section-title">ABOUT ME.</h2>
+    <p class="subtitle">關於我 / PERSONAL PROFILE</p>
+
+    <div class="about-layout">
+
+        <img src="image/image.png" alt="" class="aa">
+         
+
+        <div class="about-text">
+            <h3>Hello, I'm a Designer.</h3>
+
+            <p>
+                我是一位喜歡觀察生活、探索視覺美感的設計學習者。
+                對平面設計、品牌形象與插畫有著濃厚的興趣。
+                我喜歡將日常生活中的想法轉化成具有特色的視覺作品。
+            </p>
+
+            <p>
+                對我來說，設計不只是讓畫面變得漂亮，
+                更是透過不同的方式傳達想法與故事。
+            </p>
+
+            <div class="info">
+                <p>姓名：李玟慧</p>
+                <p>所在地：台灣・高雄</p>
+                <p>專業：視覺傳達設計</p>
+                <p>興趣：設計、音樂、電影、動漫</p>
+            </div>
+
+            <h4>MY SKILLS</h4>
+
+            <div class="skill-list">
+                <span>Illustrator</span>
+                <span>Photoshop</span>
+                <span>平面設計</span>
+                <span>插畫</span>
+                <span>版面編排</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 03 作品集 -->
+<section id="portfolio">
+    <h2 class="section-title">MY WORKS.</h2>
+    <p class="subtitle">設計作品 / SELECTED PORTFOLIO</p>
+
+    <div class="work-grid">
+
+        <div class="work-card">
+            <img src="image/雙重名片_工作區域 1 複本 2.png" class="work-image">
+            <div class="work-info">
+                <h3>01 / Graphic Design</h3>
+                <p>平面視覺設計，透過文字與圖像創造視覺特色。</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+            <img src="image/海報.png" class="work-image">
+            <div class="work-info">
+                <h3>02 / Poster Design</h3>
+                <p>商業海報設計，從概念發想到視覺識別的建立。</p>
+            </div>
+        </div>
+
+        <div class="work-card">
+           <img src="image/葛葉.png" class="work-image">
+            <div class="work-info">
+                <h3>03 / Illustration</h3>
+                <p>插畫創作，將個人想法轉化為獨特的圖像。</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- 04 興趣介紹 -->
+<section id="interests">
+    <h2 class="section-title">MY INTERESTS.</h2>
+    <p class="subtitle">生活靈感 / THINGS I LOVE</p>
+
+    <div class="interest-grid">
+
+        <div class="interest-card">
+            <div class="interest-icon">🎬</div>
+            <h3>MOVIE</h3>
+            <p>
+                電影是我獲得靈感的來源之一。
+                喜歡觀察電影的色彩、構圖、場景與故事，
+                從不同的影像中尋找設計靈感。
+            </p>
+        </div>
+
+        <div class="interest-card">
+            <div class="interest-icon">🎨</div>
+            <h3>ANIME</h3>
+            <p>
+                喜歡動漫的角色設計與世界觀。
+                不同的角色造型、色彩搭配及畫風，
+                都讓我對視覺創作有更多想像。
+            </p>
+        </div>
+
+        <div class="interest-card">
+            <div class="interest-icon">🎧</div>
+            <h3>MUSIC</h3>
+            <p>
+                音樂陪伴著我的日常生活。
+                喜歡透過旋律與歌詞感受情緒，
+                也會從專輯封面與 MV 尋找視覺靈感。
+            </p>
+        </div>
+
+    </div>
+
+    <!-- YouTube影片 -->
+    
+<!-- 05 聯絡資訊 -->
+<section id="contact">
+    <h2 class="section-title">LET'S CONNECT.</h2>
+    <p class="subtitle">保持聯繫 / CONTACT ME</p>
+
+    <div class="contact-text">
+        <p>Thank you for visiting my website!</p>
+        <p>期待透過設計認識更多有趣的人。</p>
+        <p>Email：4b3j2029@gmail.com</p>
+        <p>Instagram：wenhui_6686</p>
+    </div>
+</section>
+
+<!-- 頁尾 -->
+<footer>
+    © 2026 MY CREATIVE SPACE. ALL RIGHTS RESERVED.
+</footer>
+
+</body>
+</html>
